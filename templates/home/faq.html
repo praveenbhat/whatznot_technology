@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} FA&Q | Whatznot Technology {% endblock title %}
+
+
+
+
+
+
+{% block content %}
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+
+        <!-- FAQ area start -->
+        <section class="faq__area-6">
+          <div class="container g-0 line pt-130 pb-140">
+            <div class="line-3"></div>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="sec-title-wrapper">
+                  <h2 class="sec-title-2 animation__char_come">FAQ</h2>
+                  <p class="">Frequently asked question (FAQ) <br> pages to find answars.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="faq__list-6">
+                  <div class="accordion" id="accordionExample">
+{% for f in faq %}
+                    <div class="accordion-item">
+
+                      <h2 class="accordion-header" id="headingOne{{f.id}}">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          {{f.title}}
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <p>{{f.des}}</p>
+                        </div>
+
+                      </div>
+{% endfor %}
+                    </div>
+{% for fa in faaq %}
+                    <div class="accordion-item">
+
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo{{fa.id}}" aria-expanded="false" aria-controls="collapseTwo">
+                          {{fa.title}}
+                        </button>
+                      </h2>
+                      <div id="collapseTwo{{fa.id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <p>{{fa.des}}</p>
+                        </div>
+                      </div>
+
+                    </div>
+{% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FAQ area end -->
+
+
+        <!-- CTA area end -->
+
+      </main>
+
+
+{% endblock content %}

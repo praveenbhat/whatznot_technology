@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Team Details | Whatznot Technology {% endblock title %}
+
+
+
+{% block content %}
+
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+        <div class="team__detail-page">
+          <!-- <span class="line-1"></span>
+          <span class="line-2"></span>
+          <span class="line-3"></span> -->
+
+{% if team_detailss %}
+          <!-- Team area start -->
+          <section class="team__detail">
+            <div class="container line pb-140">
+              <div class="line-3"></div>
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-8 offset-lg-0 offset-md-2">
+                  <div class="team__member-img">
+                    <img src="/media/{{team_detailss.image}}" alt="Team Member Picture" data-speed="0.5">
+                  </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
+                  <div class="sec-title-wrapper pt-120">
+                    <h2 class="team__member-name-7 animation__char_come">{{team_detailss.name}}</h2>
+                    <h3 class="team__member-role-7 animation__char_come">{{team_detailss.name}}, at
+                      <span>Whatznot Technology</span>
+                    </h3>
+                    {{team_detailss.content}}
+                  </div>
+                  <div class="team__member-work">
+                    <h4 class="work-title">Portfolio :</h4>
+                    <ul>
+                      <li><a href="{{team_detailss.facebook}}" target="_blank">Facebook</a></li>
+                      <li><a href="{{team_detailss.linkedin}}" target="_blank">Linkedin</a></li>
+                      <li><a href="{{team_detailss.freelancer}} target="_blank"">Freelancer</a></li>
+                      <li><a href="{{team_detailss.upwork}}" target="_blank">Upwork</a></li>
+                    </ul>
+                  </div>
+                  <div class="team__member-social">
+                    <h4 class="work-title">Follow US :</h4>
+                    <ul>
+                      <li><a href="#"><span><i class="fa-brands fa-facebook-f"></i></span></a></li>
+                      <li><a href="#"><span><i class="fa-brands fa-twitter"></i></span></a></li>
+                      <li><a href="#"><span><i class="fa-brands fa-instagram"></i></span></a></li>
+                      <li><a href="#"><span><i class="fa-brands fa-linkedin"></i></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Team area end -->
+{% endif %}
+
+          <!-- CTA area start -->
+          <section class="cta__area">
+            <div class="container line pt-130 pb-110">
+              <div class="line-3"></div>
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="cta__content">
+                    <p class="cta__sub-title">Let's Connect </p>
+                    <h2 class="cta__title title-anim">We would love to hear more about your project</h2>
+                    <div id="btn_wrapper">
+                      <a href="contact" class="wc-btn-primary btn-item btn-hover"><span></span>Let’s talk us <i
+                          class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- CTA area end -->
+
+
+        </div>
+      </main>
+
+{% endblock content %}

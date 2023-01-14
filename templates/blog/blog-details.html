@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Blog Details {% endblock title %}
+
+
+
+
+
+
+{% block content %}
+
+<div id="smooth-wrapper" xmlns:border-radius="http://www.w3.org/1999/xhtml">
+    <div id="smooth-content">
+      <main>
+
+        <!-- Blog detail start -->
+        <section class="blog__detail">
+
+          <div class="container g-0 line pt-140">
+            <span class="line-3"></span>
+            <div class="row">
+
+              <div class="col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1">
+                <div class="blog__detail-top">
+{% if blogs %}
+
+
+
+                  <h2 class="blog__detail-date animation__word_come">{{blogs.category}} <span>{{blogData.add_time}}</span></h2>
+                  <h3 class="blog__detail-title animation__word_come">{{blogs.title}}
+                  </h3>
+                  <div class="blog__detail-metalist">
+                    <div class="blog__detail-meta">
+                      <img src="/media/{{blogs.author.authorImage}}" style="width:60px;height:60px ; border-radius: 50% ; "  alt="Author Picture">
+                      <p>Writen by <span> {{blogs.author}} </span></p>
+                    </div>
+                    <div class="blog__detail-meta">
+                      <p>Viewed <span>3 min read</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-12">
+                <div class="blog__detail-thumb">
+                  <img src="/media/{{blogs.blogimage}}" alt="Blog Thumbnail" data-speed="0.5">
+                </div>
+              </div>
+              <div class="col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1">
+                <div class="blog__detail-content">
+                  {{blogs.content | safe }}
+
+                </div>
+              </div>
+
+{% endif %}
+
+
+
+
+            </div>
+          </div>
+
+        </section>
+        <!-- Blog detail end -->
+
+
+        <!-- Related blog start -->
+        <section class="blog__related blog__animation">
+          <div class="container g-0 line pt-130 pb-140">
+            <span class="line-3"></span>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="sec-title-wrapper">
+                  <h2 class="sec-title title-anim">Related Aricles</h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="row reset-grid">
+{% for bl in r %}
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                <article class="blog__item">
+                  <div class="blog__img-wrapper">
+                    <a href="/blog/{{bl.url}}">
+                      <div class="img-box">
+                        <img class="image-box__item" src="/media/{{bl.thumbimage}}" alt="Blog Thumbnail">
+                        <img class="image-box__item" src="/media/{{bl.thumbimage}}" alt="BLog Thumbnail">
+                      </div>
+                    </a>
+                  </div>
+                  <h4 class="blog__meta sub-title-anim"><a href="#">{{bl.category.cat_name}}</a> {{b.add_time}}</h4>
+                  <h5><a href="/blog/{{bl.url}}" class="blog__title sub-title-anim">{{bl.title }}</a></h5>
+                  <a href="/blog/{{bl.url}}" class="blog__btn">Read More <span>
+                      <i class="fa-solid fa-arrow-right"></i></span></a>
+                </article>
+              </div>
+{% endfor %}
+
+              </div>
+            </div>
+
+        </section>
+        <!-- Related blog end -->
+
+
+        <!-- CTA area start -->
+        <section class="cta__area">
+          <div class="container line pb-110">
+            <div class="line-3"></div>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="cta__content">
+                  <p class="cta__sub-title">Work with us</p>
+                  <h2 class="cta__title title-anim">We would love to hear more about your project</h2>
+                  <div id="btn_wrapper">
+                    <a href="contact.html" class="wc-btn-primary btn-item btn-hover"><span></span>Let’s talk us <i
+                        class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CTA area end -->
+
+      </main>
+
+
+{% endblock content %}

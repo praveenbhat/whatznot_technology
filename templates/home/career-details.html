@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Career Details | Whatznot Technology {% endblock title %}
+
+
+
+
+
+
+{% block content %}
+
+
+{% if ca %}
+  <!-- Job details top start -->
+        <section class="job__detail-top">
+          <img src="/media/{{ca.image}}" alt="Image" data-speed="auto">
+        </section>
+        <!-- Job details top end -->
+
+
+        <!-- Job detail start -->
+        <section class="job__detail">
+          <div class="container g-0 line pb-110">
+            <span class="line-3"></span>
+
+            <div class="row">
+              <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-8">
+                <div class="job__detail-wrapper">
+                  <h2 class="sec-title">{{ca.name}}</h2>
+                  <ul class="job__detail-meta">
+                    <li><span>Location</span>{{ca.location}}</li>
+                    <li><span>Date</span> {{ca.date}}</li>
+                    <li><span>Job Type</span> {{ca.type}}</li>
+                  </ul>
+                  <div class="job__detail-content">
+                    <p>{{ca.content | safe }}</p>
+                  </div>
+
+                  <div class="job__apply" id="btn_wrapper">
+                    <button class="wc-btn-primary btn-hover btn-item"><span></span> Apply this <br>Position <i
+                        class="fa-solid fa-arrow-right"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
+                <div class="job__detail-sidebar">
+                  <ul>
+                    <li><span>Experience</span> {{ca.experience}}</li>
+                    <li><span>Working Hours</span> {{ca.working_time}}</li>
+                    <li><span>Working Days</span> {{ca.working_day}}</li>
+                    <li><span>Salary</span>{{ca.salary}}</li>
+                    <li><span>Vacancy</span> {{ca.vacancy}}</li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Job detail end -->
+
+
+{% endif %}
+
+
+
+{% endblock content %}
+
+

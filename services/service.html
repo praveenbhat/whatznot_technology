@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Service | Whatznot Technology {% endblock title %}
+
+
+
+
+
+
+{% block content %}
+ <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+
+        <!-- Hero area start -->
+        <section class="solution__area">
+          <div class="container hero-line"></div>
+          <div class="solution__wrapper">
+            <div class="solution__left">
+              <div class="solution__img-1">
+                <img src="{% static 'imgs/thumb/solution.png' %}" alt="Solution Image">
+              </div>
+              <div class="solution__img-2">
+                <img src="{% static 'imgs/thumb/solution-2.png' %}" alt="Solution Image">
+              </div>
+            </div>
+
+            <div class="solution__mid">
+              <h1 class="solution__title animation__char_come">Digital Solution</h1>
+              <p>We’re designing digital experiences that enrich human lives and it helps to grow your business
+                globally trends.</p>
+            </div>
+
+            <div class="solution__right">
+              <div class="solution__img-3">
+                <img src="{% static 'imgs/thumb/solution-3.png' %}" alt="Solution Image">
+              </div>
+            </div>
+          </div>
+
+          <div class="container pb-130">
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="solution__btm">
+                  <ul>
+                    <li>Approch</li>
+                    <li>Creativity</li>
+                    <li>Experienced</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="solution__shape">
+            <img src="{% static 'imgs/icon/1.png' %}" alt="Shape Image" class="shape-1">
+            <img src="{% static 'imgs/icon/2.png' %}" alt="Shape Image" class="shape-2">
+            <img src="{% static 'imgs/icon/3.png' %}" alt="Shape Image" class="shape-3">
+            <img src="{% static 'imgs/icon/4.png' %}" alt="Shape Image" class="shape-4">
+            <img src="{% static 'imgs/icon/5.png' %}" alt="Shape Image" class="shape-5">
+          </div>
+        </section>
+        <!-- Hero area end -->
+<!-- Service area start -->
+        <section class="service__area-6">
+          <div class="container">
+            <div class="row inherit-row">
+              <div class="col-xxl-12">
+                <div class="content-wrapper">
+                  <div class="left-content">
+                    <ul class="service__list-6">
+                      {% for s in serv%}
+                      <li class="active"><a href="#service_{{s.id}}">{{s.name}}</a></li>
+                      {% endfor %}
+
+                    </ul>
+                  </div>
+
+                  <div class="mid-content">
+                    {% for s in serv%}
+                    <div class="service__image">
+                      <img src="/media/{{s.himage}}" alt="Service Image">
+                    </div>
+                    {%endfor %}
+                  </div>
+
+                  <div class="right-content">
+                    <div class="service__items-6">
+                      {% for s in serv%}
+                      <div class="service__item-6 has__service_animation" id="service_{{s.id}}" data-secid="{{s.id}}">
+                        <div class="image-tab">
+                          <img src="{% static 'imgs/service/1.jpg' %}" alt="Service Image">
+                        </div>
+
+                        <div class="animation__service_page">
+                          <h2 class="service__title-6">{{s.title}}</h2>
+                          <p>{{s.shortdes}}</p>
+                          <ul>
+                            {%  for t in s.tags.all %}
+                            <li>+ {{t.title}}</li>
+                            {%endfor%}
+                          </ul>
+                          <div id="btn_wrapper">
+                            <a href="{{s.url}}" class="wc-btn-secondary btn-item btn-hover"><span></span>View
+                              Service
+                              <br>Details <i class="fa-solid fa-arrow-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      {%endfor %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Service area end -->
+
+
+        <!-- Brand area start -->
+        <section class="brand__area">
+          <div class="container line pt-140 pb-100">
+            <span class="line-3"></span>
+            <div class="row">
+              <div class="col-xxl-12">
+                <h2 class="brand__title-3 title-anim">We are happy to work with global
+                  largest brands</h2>
+                <div class="brand__list brand-gap">
+                  <div class="brand__item-2 fade_bottom">
+                    <img src="{% static 'imgs/brand/1.png' %}" alt="Brand Logo">
+                  </div>
+                  <div class="brand__item-2 fade_bottom">
+                    <img src="{% static 'imgs/brand/2.png' %}" alt="Brand Logo">
+                  </div>
+                  <div class="brand__item-2 fade_bottom">
+                    <img src="{% static 'imgs/brand/3.png' %}" alt="Brand Logo">
+                  </div>
+                  <div class="brand__item-2 fade_bottom">
+                    <img src="{% static 'imgs/brand/4.png' %}" alt="Brand Logo">
+                  </div>
+                  <div class="brand__item-2 fade_bottom">
+                    <img src="{% static 'imgs/brand/5.png' %}" alt="Brand Logo">
+                  </div>
+                  <div class="brand__item-2 fade_bottom">
+                    <img src="{% static 'imgs/brand/6.png' %}" alt="Brand Logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Brand area end -->
+
+
+        <!-- CTA area start -->
+        <section class="cta__area">
+          <div class="container line pt-100 pb-110 no-p">
+            <div class="line-3"></div>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="cta__content">
+                  <p class="cta__sub-title">Let's Connect</p>
+                  <h2 class="cta__title title-anim">We would love to hear more about your project</h2>
+                  <div id="btn_wrapper">
+                    <a href="{% url 'contact' %}" class="wc-btn-primary btn-item btn-hover"><span></span>Let’s talk us <i
+                        class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CTA area end -->
+
+      </main>
+{% endblock content %}

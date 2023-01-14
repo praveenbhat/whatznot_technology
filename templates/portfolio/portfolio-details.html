@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Portfolios Details | Whatznot Technology{% endblock title %}
+
+
+
+
+
+
+{% block content %}
+{% if ports %}
+ <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+
+<main>
+   <section class="portfolio__detail">
+     <div class="portfolio__detail-top">
+        <div class="container g-0 line pt-110 pb-130">
+
+            <span class="line-3"></span>
+      <div class="row">
+                <div class="col-xxl-8 col-xl-8 col-lg-7 col-md-7">
+                  <div class="sec-title-wrapper">
+                    <h2 class="sec-title animation__char_come"> {{ports.name}} </br> </h2>
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-5">
+                  <div class="portfolio__detail-info">
+                    <ul>
+                      <li>Category <a href="#">{{ports.type}}</a></li>
+                      <li>Client <span>{{ports.client}}</span></li>
+                      <li>Start Date <span>{{ports.add_time}}</span></li>
+                      <li>Handover <span>{{ports.d_time}}  </span></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+          </br> </br>
+         <div class="portfolio__detail-thumb">
+                <img src="/media/{{ports.himage}}" alt="Portfolio Thumbnail" data-speed="auto">
+              </div>
+            <div class="portfolio__detail-content">
+              <div class="container g-0 line pt-140">
+                <span class="line-3"></span>
+
+                  <div class="block-content">
+                    <div class="row">
+                      <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                        <h2 class="portfolio__detail-title title-anim">{{ports.title}}</h2>
+                      </div>
+                  <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                    <div class="portfolio__detail-text">
+                      {{ports.fdes | safe}}
+
+                        <ul>
+                        {% for tags in ports.tags.all %}
+                        <li>+ {{tags.title}}</li>
+                        {%endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-thumb">
+                <img src="/media/{{ports.bimage}}" alt="Portfolio Image" data-speed="0.5">
+              </div>
+
+              <div class="block-content  pt-140">
+                <div class="row">
+                  <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                    <h2 class="portfolio__detail-title title-anim">{{ports.vtitle}}</h2>
+                  </div>
+
+                  <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                    <div class="portfolio__detail-text">
+                      {{ports.vdes | safe}}
+
+                      <div class="fonts">
+                        <img src="{% static 'imgs/portfolio/detail/shape.png' %}" alt="Font Style">
+                        <ul>
+                          <li class="regular"><span>Font Name</span> {{ports.fontname}}</li>
+                          <li class="medium"><span>Text Size</span> {{ports.textsize}}</li>
+                          <li class="semibold"><span>Used Color</span> {{ports.color}}</li>
+                          <li class="blod"><span>Total Pages</span> {{ports.totalpages}}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-gallery">
+                <img src="/media/{{ports.ssimage}}" alt="Portfolio Image">
+                <img src="/media/{{ports.ssimage}}" alt="Portfolio Image">
+              </div>
+
+              <div class="block-thumb">
+                <img src="/media/{{ports.mimage}}" alt="Portfolio Image" data-speed="0.5">
+              </div>
+
+              <div class="block-img-text">
+                <img src="/media/{{ports.sssimage}}" alt="Portfolio Image">
+                <img src="/media/{{ports.ssssimage}}" alt="Portfolio Image">
+                {{ports.lastcontent | safe}}
+              </div>
+
+              <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+                  <div class="portfolio__detail-btns pt-150 pb-150">
+                    <a href="portfolio-details" class="wc-btn-primary btn-hover"><span></span> Prev Work</a>
+                    <a href="portfolio-details" class="wc-btn-primary btn-hover"><span></span> Next Work</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+         </div>
+
+      </div>
+     </div>
+   </section>
+</main>
+
+{%endif %}
+{% endblock content %}
