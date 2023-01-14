@@ -12,8 +12,8 @@ def portfolios(request):
 
 def portfolios_details(request, url):
     ports = portfolio.objects.get(url=url)
-  #  page = Paginator(ports,)
-    return render(request, 'portfolio/portfolio-details.html', {'ports': ports})
+
+    return render(request, 'portfolio/portfolio-details.html', {'ports': ports,})
 
 
 
