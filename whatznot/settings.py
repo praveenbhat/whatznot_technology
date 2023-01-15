@@ -29,11 +29,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS=['https://web-production-2c96.up.railway.app']
 
 # Application definition
 
 INSTALLED_APPS = [
-#    'material',
+#   'material',
 #   'material.admin',
     'django.contrib.admin',
     'django.contrib.auth',
