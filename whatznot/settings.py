@@ -36,7 +36,7 @@ CSRF_COOKIE_DOMAIN = 'https://web-production-2c96.up.railway.app'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
+CORS_ORIGIN_ALLOW_ALL = True
 SRF_COOKIE_HTTPONLY = False
 # Application definition
 
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'portfolios',
     'services',
     'home',
+    'corsheaders'
 ]
 
 
