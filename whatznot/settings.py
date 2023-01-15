@@ -38,7 +38,7 @@ CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CORS_ORIGIN_ALLOW_ALL = True
-SRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_HTTPONLY = False
 # Application definition
 
 INSTALLED_APPS = [
