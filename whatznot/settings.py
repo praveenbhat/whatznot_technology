@@ -27,20 +27,19 @@ SECRET_KEY = 'django-insecure-nw#@u*$=rslp9dwexakq2=4r*kb@a%(f4nrb5jmk0jz=t8fgxx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['web-production-fcf2.up.railway.app']
 
-ALLOWED_ORIGINS = ['http://*', 'https://*']
-CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
+
 CSRF_COOKIE_SECURE=False
-CSRF_COOKIE_DOMAIN = 'https://web-production-2c96.up.railway.app'
+CSRF_COOKIE_DOMAIN = 'web-production-fcf2.up.railway.app'
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_HTTPONLY = False
 # Application definition
-
+ALLOWED_ORIGINS = ['http://*', 'https://*']
+CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
 INSTALLED_APPS = [
     'material',
     'material.admin',
