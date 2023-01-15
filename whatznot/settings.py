@@ -31,7 +31,8 @@ ALLOWED_HOSTS = ['*']
 
 ALLOWED_ORIGINS = ['http://*', 'https://*']
 CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
-
+CSRF_COOKIE_SECURE=False
+CSRF_COOKIE_DOMAIN = 'https://web-production-2c96.up.railway.app/'
 # Application definition
 
 INSTALLED_APPS = [
