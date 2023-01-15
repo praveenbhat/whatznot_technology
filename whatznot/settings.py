@@ -33,8 +33,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'material',
-    'material.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -50,36 +49,7 @@ INSTALLED_APPS = [
 ]
 
 
-MATERIAL_ADMIN_SITE = {
-    'HEADER':  ('Whatznot Technology'),  # Admin site header
-    'TITLE':  ('whatznot'),  # Admin site title
-    'FAVICON':  "imgs/logo/favicon.png",  # Admin site favicon (path to static should be specified)
-    'MAIN_BG_COLOR':  'blue',  # Admin site main color, css color should be specified
-    'MAIN_HOVER_COLOR':  'blue',  # Admin site main hover color, css color should be specified
-    'PROFILE_PICTURE':  "imgs/logo/favicon.png",  # Admin site profile picture (path to static should be specified)
-    'PROFILE_BG':  "imgs/logo/favicon.png",  # Admin site profile background (path to static should be specified)
-    'LOGIN_LOGO':  "imgs/logo/favicon.png",  # Admin site logo on login page (path to static should be specified)
-    'LOGOUT_BG':  "imgs/logo/favicon.png",  # Admin site background on login/logout pages (path to static should be specified)
-    'SHOW_THEMES':  True,  #  Show default admin themes button
-    'TRAY_REVERSE': True,  # Hide object-tools and additional-submit-line by default
-    'NAVBAR_REVERSE': True,  # Hide side navbar by default
-    'SHOW_COUNTS': True, # Show instances counts for each model
-    'APP_ICONS': {  # Set icons for applications(lowercase), including 3rd party apps, {'application_name': 'material_icon_name', ...}
-       'portfolio': 'check_circle_outline',
-        },
-    'MODEL_ICONS': {  # Set icons for models(lowercase), including 3rd party models, {'model_name': 'material_icon_name', ...}
-        'team_detail': 'groups',
-        'faqs': 'edit',
-        'group': 'groups',
-        'user': 'person',
-        'portfolio': 'collections',
-        'author': 'hail',
-        'blog': 'note_add',
-        'cat': 'category',
 
-
-    }
-}
 
 
 
