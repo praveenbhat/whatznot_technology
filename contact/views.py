@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from .models import Contact
-from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 
 
-@csrf_exempt
+
 def contact(request):
     if request.method=="POST":
         con=Contact()

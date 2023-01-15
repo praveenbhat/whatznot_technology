@@ -33,7 +33,7 @@ ALLOWED_ORIGINS = ['http://*', 'https://*']
 CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
 CSRF_COOKIE_SECURE=False
 CSRF_COOKIE_DOMAIN = 'https://web-production-2c96.up.railway.app'
-CSRF_TRUSTED_ORIGINS = ['https://web-production-2c96.up.railway.app']
+
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'portfolios',
     'services',
     'home',
-    'corsheaders'
+
 ]
 
 
